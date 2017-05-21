@@ -14,14 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-        public void str (View v) {
-            Button str = (Button) findViewById(R.id.button);
-            str.setBackgroundResource(R.color.colorAccent);
-
-
-        }
+    public void str(View v) {
+        Button str = (Button) findViewById(R.id.button);
+        str.setBackgroundResource(R.color.colorAccent);
     }
-
-
-
+}
