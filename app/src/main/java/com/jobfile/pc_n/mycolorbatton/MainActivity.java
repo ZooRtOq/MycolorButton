@@ -1,10 +1,9 @@
 package com.jobfile.pc_n.mycolorbatton;
 
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void str(View v) {
-        Button str = (Button) findViewById(R.id.button);
-        str.setBackgroundResource(R.color.colorAccent);
+        v.setBackgroundResource(R.color.colorAccent);
     }
 }
