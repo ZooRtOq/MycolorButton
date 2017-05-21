@@ -7,6 +7,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean buttonIsPurple = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void str(View v) {
-        v.setBackgroundResource(R.color.colorAccent);
+        if (buttonIsPurple) {
+            v.setBackgroundResource(R.color.colorPrimaryDark);
+        } else {
+            v.setBackgroundResource(R.color.colorAccent);
+            if (buttonIsPurple == false) {
+                v.setBackgroundResource(R.color.colorPrimaryDark);
+            }
+        }
     }
 }
