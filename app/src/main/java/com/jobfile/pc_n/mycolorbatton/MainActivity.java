@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void str(View v) {
-        if (buttonIsPurple) {
-            v.setBackgroundResource(R.color.colorPrimaryDark);
-        } else {
+        if (buttonIsPurple == true) {
+
             v.setBackgroundResource(R.color.colorAccent);
+            buttonIsPurple = false;
+        } else {
             if (buttonIsPurple == false) {
                 v.setBackgroundResource(R.color.colorPrimaryDark);
+                buttonIsPurple=true;
             }
         }
     }
