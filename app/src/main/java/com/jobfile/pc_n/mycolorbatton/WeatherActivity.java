@@ -1,14 +1,11 @@
 package com.jobfile.pc_n.mycolorbatton;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.io.IOException;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -16,24 +13,27 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-
-        try {
-            String response = run("https://example.com/");
-            TextView uiText = (TextView) findViewById(R.id.weather_data);
-            uiText.setText(response);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        new DownloadFilesTask().execute("https://example.com/");
     }
 
-    String run(String url) throws IOException {
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        OkHttpClient client = new OkHttpClient();
-        Response response = client.newCall(request).execute();
-        return response.body().string();
+    private void showResult(String weather) {
+        TextView uiText = (TextView) findViewById(R.id.weather_data);
+        uiText.setText(weather);
+    }
+
+    private class DownloadFilesTask extends AsyncTask<String, Void, String> {
+
+        @Override protected String doInBackground(String... params) {
+            try {
+                return NetworkUtils.run(params[0]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "error";
+        }
+
+        @Override protected void onPostExecute(String result) {
+            showResult(result);
+        }
     }
 }
