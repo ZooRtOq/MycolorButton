@@ -10,7 +10,6 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean buttonIsPurple = false;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,31 +19,15 @@ public class MainActivity extends AppCompatActivity {
     public void str(View v) {
         if (buttonIsPurple) {
             v.setBackgroundResource(R.color.colorAccent);
-
             buttonIsPurple = false;
-
         } else {
-
-            if (!buttonIsPurple) {
-
-                v.setBackgroundResource(R.color.colorPrimaryDark);
-                buttonIsPurple = true;
-
-            }
-
+            v.setBackgroundResource(R.color.colorPrimaryDark);
+            buttonIsPurple = true;
         }
-
-
     }
-
 
     public void next(View v) {
         Intent intent = new Intent(this, RunMain.class);
         startActivity(intent);
-
     }
-
 }
-
-
-
