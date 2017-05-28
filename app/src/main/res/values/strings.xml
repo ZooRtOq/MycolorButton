@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Моя цветная кнопка</string>
     <string name="activated">Активировано</string>
+    <string name="show_weather">Смотреть погоду</string>
 </resources>

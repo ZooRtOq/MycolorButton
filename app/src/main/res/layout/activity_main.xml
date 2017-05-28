@@ -33,4 +33,11 @@
         tools:ignore="HardcodedText"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_weather"
+        android:onClick="showWeather"/>
+
+
 </FrameLayout>
