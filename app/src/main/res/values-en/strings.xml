@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">My Color Button</string>
     <string name="activated">Activated</string>
+    <string name="show_weather">See Weather</string>
 </resources>
