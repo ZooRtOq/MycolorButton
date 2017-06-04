@@ -13,7 +13,7 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        new DownloadFilesTask().execute("https://example.com/");
+        new DownloadFilesTask().execute("http://api.openweathermap.org/data/2.5/weather?q=Moscow,Ru&APPID=92c07848422f27c0f91cabdae2f1db2f");
     }
 
     private void showResult(String weather) {
