@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jobfile.pc_n.mycolorbatton.MainActivity"
-    >
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.jobfile.pc_n.mycolorbatton.MainActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/button"
@@ -20,24 +21,23 @@
         android:background="@color/colorPrimaryDark"
         android:onClick="str"
         android:text="Button"
-        tools:ignore="HardcodedText"
-        />
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="146dp"
+        android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center"
         android:onClick="next"
         android:text="перейти"
-        tools:ignore="HardcodedText"
-        />
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="showWeather"
         android:text="@string/show_weather"
-        android:onClick="showWeather"/>
-
-
-</FrameLayout>
+        tools:ignore="RtlHardcoded" />
+</LinearLayout>
