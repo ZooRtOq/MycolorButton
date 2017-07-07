@@ -13,8 +13,7 @@ import java.io.IOException;
 
 public class WeatherActivity extends AppCompatActivity {
 
-    public static final String RETRIEVE_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q=Moscow,Ru&APPID=92c07848422f27c0f91cabdae2f1db2f";
-
+    public static final String RETRIEVE_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q=Moskov,Ru&APPID=92c07848422f27c0f91cabdae2f1db2f";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +21,19 @@ public class WeatherActivity extends AppCompatActivity {
         new DownloadFilesTask().execute(RETRIEVE_WEATHER_URL);
     }
 
-    private void showResult(String weather) {
-        TextView uiText = (TextView) findViewById(R.id.weather_data);
+    private void showResult(String  weather ) {
+        TextView uiText = (TextView) findViewById(R.id.temperature);
+         TextView ut = (TextView) findViewById(R.id.description);
         try {
             JSONObject weatherJson = new JSONObject(weather);
+
+            JSONObject main = weatherJson.getJSONObject("main");//массив main спарсили температуру погоды
+            String temp = main.getString("temp");
+
             String mainWeather = weatherJson.getJSONArray("weather").getJSONObject(0).getString("main");
             uiText.setText(mainWeather);
+            ut.setText(temp);//вывили на экран температуру погоды
+
         } catch (JSONException e) {
             Toast.makeText(this, "Ошибка при парсе json", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
