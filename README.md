@@ -1,7 +1,8 @@
 ## My Color Button
 
 
-### TODO
+### Домашка на 30.07.2017
+1. Переделать парсинг json'а используя библиотеку gson (https://github.com/google/gson)
 
 ### Домашка на 11.06.2017
 1. Установить postman (chrome application)
