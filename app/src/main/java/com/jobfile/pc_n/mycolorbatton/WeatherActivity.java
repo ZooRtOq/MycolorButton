@@ -17,6 +17,7 @@ import java.io.IOException;
 public class WeatherActivity extends AppCompatActivity {
 
     public static final String RETRIEVE_WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?q=Moskov,Ru&APPID=92c07848422f27c0f91cabdae2f1db2f";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class WeatherActivity extends AppCompatActivity {
         new DownloadFilesTask().execute(RETRIEVE_WEATHER_URL);
     }
 
-    private void showResult(String  weather ) {
+    private void showResult(String weather) {
         TextView uiText = (TextView) findViewById(R.id.temperature);
         TextView ut = (TextView) findViewById(R.id.description);
         ImageView uiIcon = (ImageView) findViewById(R.id.icon);
@@ -35,7 +36,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             String temp = main.getString("temp");
             String icon = weatherJson.getJSONArray("weather").getJSONObject(0).getString("icon");
-            String url ="http://openweathermap.org/img/w/" + icon + ".png";
+            String url = "http://openweathermap.org/img/w/" + icon + ".png";
             String mainWeather = weatherJson.getJSONArray("weather").getJSONObject(0).getString("main");
             uiText.setText(mainWeather);
             ut.setText(temp);//вывили на экран температуру погоды
